@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DOM 1</title>
+	</head>
+	<body>
+		    <section id="p1" style="font-size:15px;color: black;">Hello</section>
+		    <button onclick="changeContent()">Change content</button>
+            <button onclick="changeStyle()">Change style</button>
+        <br>
+        <div id="d1">
+            <p>1</p>
+        </div>
+        <button onclick="changeCommon()">Change Common style</button>
+        <button onclick="Addcontent()">Add number</button>
+        <button onclick="RemoveContent()">Remove number</button>
+	</body>
+	<script>
+        y=1;
+        z=1;
+        w=1;
+        j=2;
+		function changeContent(){
+			x=document.getElementById("p1");
+            if(y){
+                x.innerHTML="How are you";
+                y=0;
+            }
+            else{
+                x.innerHTML="Hello";
+                y=1;
+            }
+		}
+        function changeStyle(){
+			x=document.getElementById("p1");
+            if(z){
+                x.style.color="blue";
+                x.style.fontSize="30px";
+                z=0;
+            }
+            else{
+                x.style.color="black";
+                x.style.fontSize="15px";
+                z=1;
+            }
+		}
+        function changeCommon(){
+            x=document.getElementsByTagName("p");
+            if(w){
+                for(let i=0;i<x.length;i++){
+                    x[i].style.backgroundColor="purple";
+                    x[i].style.fontSize="25px";  
+                    w=0;  
+                }
+            }
+            else{
+                for(let i=0;i<x.length;i++){
+                    x[i].style.backgroundColor="white"; 
+                    x[i].style.fontSize="15px";
+                    w=1;   
+                }
+            }
+        }
+        function Addcontent(){
+            para = document.createElement("p");
+            node = document.createTextNode(j);
+            para.appendChild(node);
+            document.getElementById("d1").appendChild(para);
+            j++;
+        }
+        function RemoveContent(){
+            parent=document.getElementById("d1");
+            child=document.getElementsByTagName("p");
+            parent.removeChild(parent.lastElementChild);
+            j--;
+        }
+	</script>
+</html>

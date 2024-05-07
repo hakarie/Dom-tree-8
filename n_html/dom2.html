@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM 2</title>
+    </head>
+    <body>
+        <button id="b1" onclick="">click here</button>
+        <p id="p1">Hello</p>
+        <script>
+            let x=document.getElementById("b1");
+            y=1;
+            x.addEventListener("click",content);
+            x.addEventListener("mouseover",colorChange);
+            x.addEventListener("mouseout",colorChange1);
+            function content(){
+                if(y){
+                    document.getElementById("p1").innerHTML = "How are you";
+                    y=0;
+                }
+                else{
+                    document.getElementById("p1").innerHTML = "Hello";
+                    y=1;
+                }
+            }
+            function colorChange(){
+                document.getElementById("p1").style.backgroundColor="purple";
+            }
+            function colorChange1(){
+                document.getElementById("p1").style.backgroundColor="white";
+            }
+        </script>
+    </body>
+</html>
